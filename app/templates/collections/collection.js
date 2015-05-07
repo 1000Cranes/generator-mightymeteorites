@@ -1,0 +1,1 @@
+<%= collectionName %> = new Mongo.Collection('<%= collection %>');
