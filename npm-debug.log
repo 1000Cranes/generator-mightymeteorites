@@ -1,0 +1,99 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/home/ubuntu/.nvm/v0.10.35/bin/npm', 'publish' ]
+2 info using npm@2.9.0
+3 info using node@v0.10.35
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/ubuntu/workspace/generator-mightymeteorites',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package.tgz not in flight; packing
+9 verbose tar pack [ '/home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package.tgz',
+9 verbose tar pack   '/home/ubuntu/workspace/generator-mightymeteorites' ]
+10 verbose tarball /home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package.tgz
+11 verbose folder /home/ubuntu/workspace/generator-mightymeteorites
+12 info prepublish generator-mightymeteorites@0.1.0
+13 verbose addLocalTarball adding from inside cache /home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package.tgz
+14 silly cache afterAdd generator-mightymeteorites@0.1.0
+15 verbose afterAdd /home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package/package.json not in flight; writing
+16 verbose afterAdd /home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package/package.json written
+17 silly publish { name: 'generator-mightymeteorites',
+17 silly publish   version: '0.1.0',
+17 silly publish   description: 'A Meteor Yeoman generator',
+17 silly publish   license: 'MIT',
+17 silly publish   main: 'app/index.js',
+17 silly publish   repository:
+17 silly publish    { type: 'git',
+17 silly publish      url: 'git+https://github.com/1000cranes/generator-mightymeteorites.git' },
+17 silly publish   author: { name: 'Loura Coons', url: 'https://github.com/1000Cranes' },
+17 silly publish   scripts: { test: 'mocha' },
+17 silly publish   files: [ 'app', 'section' ],
+17 silly publish   keywords: [ 'yeoman-generator' ],
+17 silly publish   dependencies:
+17 silly publish    { 'yeoman-generator': '^0.19.0',
+17 silly publish      chalk: '^1.0.0',
+17 silly publish      yosay: '^1.0.2',
+17 silly publish      'underscore.string': '>=3.0.3' },
+17 silly publish   devDependencies: { mocha: '*' },
+17 silly publish   readme: '# generator-mightymeteorites \n\nAn(other) opinionated Meteor.js scaffolding tool for Yeoman.\n\n----\n\n## Setup\n\nBefore you\'ll get any use out of this, you\'ll need to install [Meteor](http://docs.meteor.com/#quickstart) and [Yeoman](http://yeoman.io/gettingstarted.html)\n\nHere are the combined instructions at the time of this writing:\n\n```\n# Meteor\ncurl https://install.meteor.com | /bin/sh\n\n# Yeoman\nnpm install -g yo\n\n# This generator\nnpm install -g generator-mightymeteorites\n```\n\n\n## Scaffolding\n\nThe following command will scaffold a new meteor app for you.  You will be prompted for the name of your\nstarting collection.  For instance, if you were creating a blog you might choose `posts` as the name\nof your starting collection.\n\nYou will also be asked if you would like to include the package `iron:router` and you can choose from\neither `twbs:bootstrap` or `materialize:materialize` for your UI.\n\nTo scaffold create a directory and then inside the directory call `yo mightmeteorites`.\n\n```\nmkdir my-app && cd my-app\nyo mightymeteorites\n```\n\nAs part of the scaffolding the meteor project will be updated to the latest version and all packages will\nbe updated to the latest compatible version.\n\nAfter your app is scaffolded, you can start your app with:\n\n```\nmeteor\n```\n\n## Structure\n\nThe generated app will have the following structure by default (assuming `iron:router` and `materialize:materialize` and a starting collection "puppies")\n\n```\n/\n    README.md\n    .meteor/\n        gitignore\n        release\n    server/\n        startup.js\n        publications/\n            puppies.js\n    public/\n        robots.txt\n    collections/\n        puppies.js\n    client/\n        subscriptions/\n            puppies.js\n        views/\n            puppies/\n                template.html\n                events.js\n                helpers.js\n                rendered.js\n                routers.js\n            base/\n                footer.html\n                header.html\n                sidebar.html\n                rendered.js\n                style.css\n            template/\n                layout.html\n                loading.html\n                not_found.html\n                router.js\n```\n\n\n## Sub-Generators\n\nThere are two Yeoman sub-generators to simplify common development tasks:\n\n### view\n\nThe view sub-generator creates the following files.  You can also use the option\n`--ironRouter` to include a `client\\views\\my_view\\routers.js` file.\n\n`yo mightymeteorites:view my_view`\n\n```\n/\n    client/\n        views/\n            my_view/\n                template.html\n                events.js\n                helpers.js\n                rendered.js\n```\n\n`yo mightymeteorites:view my_view --ironRouter`\n\n```\n/\n    client/\n        views/\n            my_view/\n                template.html\n                events.js\n                helpers.js\n                rendered.js\n                routers.js\n```\n\n### collection\n\nThe collection sub-generator creates the following files.  You can also use the option\n`--ironRouter` to include a `client\\views\\my_view\\routers.js` file.\n\n`yo mightymeteorites:collection cats`\n\n```\n/\n    server/\n        publications/\n            cats.js\n    collections/\n        cats.js\n    client/\n        subscriptions/\n            cats.js\n        views/\n            cats/\n                template.html\n                events.js\n                helpers.js\n                rendered.js\n                routers.js\n```\n\n`yo mightymeteorites:collection cats --ironRouter`\n\n```\n/\n    server/\n        publications/\n            cats.js\n    collections/\n        cats.js\n    client/\n        subscriptions/\n            cats.js\n        views/\n            cats/\n                template.html\n                events.js\n                helpers.js\n                rendered.js\n                routers.js\n                routers.js\n``` \n\n## License\n\nMIT',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '7c21b9b0cac0072ba469f01e574968445f979c42',
+17 silly publish   bugs: { url: 'https://github.com/1000cranes/generator-mightymeteorites/issues' },
+17 silly publish   homepage: 'https://github.com/1000cranes/generator-mightymeteorites#readme',
+17 silly publish   _id: 'generator-mightymeteorites@0.1.0',
+17 silly publish   _shasum: '5b2ceed51603407cf03c8f3279d37e3c52c3305e',
+17 silly publish   _from: '.' }
+18 verbose getPublishConfig undefined
+19 silly mapToRegistry name generator-mightymeteorites
+20 silly mapToRegistry using default registry
+21 silly mapToRegistry registry https://registry.npmjs.org/
+22 silly mapToRegistry uri https://registry.npmjs.org/generator-mightymeteorites
+23 verbose publish registryBase https://registry.npmjs.org/
+24 silly publish uploading /home/ubuntu/.npm/generator-mightymeteorites/0.1.0/package.tgz
+25 verbose request uri https://registry.npmjs.org/generator-mightymeteorites
+26 verbose request sending authorization for write operation
+27 info attempt registry request try #1 at 10:37:41
+28 verbose request using bearer token for auth
+29 verbose request id f06446a238372301
+30 http request PUT https://registry.npmjs.org/generator-mightymeteorites
+31 http 403 https://registry.npmjs.org/generator-mightymeteorites
+32 verbose headers { 'content-type': 'application/json',
+32 verbose headers   'cache-control': 'max-age=60',
+32 verbose headers   'content-length': '95',
+32 verbose headers   'accept-ranges': 'bytes',
+32 verbose headers   date: 'Thu, 07 May 2015 10:37:42 GMT',
+32 verbose headers   via: '1.1 varnish',
+32 verbose headers   connection: 'keep-alive',
+32 verbose headers   'x-served-by': 'cache-dfw1833-DFW',
+32 verbose headers   'x-cache': 'MISS',
+32 verbose headers   'x-cache-hits': '0',
+32 verbose headers   'x-timer': 'S1430995061.422691,VS0,VE1064' }
+33 verbose request invalidating /home/ubuntu/.npm/registry.npmjs.org/generator-mightymeteorites on PUT
+34 error publish Failed PUT 403
+35 verbose stack Error: "You cannot publish over the previously published version 0.1.0." : generator-mightymeteorites
+35 verbose stack     at CachingRegistryClient.<anonymous> (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:247:14)
+35 verbose stack     at Request._callback (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:170:14)
+35 verbose stack     at Request.self.callback (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/request/request.js:368:22)
+35 verbose stack     at Request.emit (events.js:98:17)
+35 verbose stack     at Request.<anonymous> (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/request/request.js:1219:14)
+35 verbose stack     at Request.emit (events.js:117:20)
+35 verbose stack     at IncomingMessage.<anonymous> (/home/ubuntu/.nvm/v0.10.35/lib/node_modules/npm/node_modules/request/request.js:1167:12)
+35 verbose stack     at IncomingMessage.emit (events.js:117:20)
+35 verbose stack     at _stream_readable.js:944:16
+35 verbose stack     at process._tickCallback (node.js:442:13)
+36 verbose statusCode 403
+37 verbose pkgid generator-mightymeteorites
+38 verbose cwd /home/ubuntu/workspace/generator-mightymeteorites
+39 error Linux 3.14.13-c9
+40 error argv "node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "publish"
+41 error node v0.10.35
+42 error npm  v2.9.0
+43 error code E403
+44 error "You cannot publish over the previously published version 0.1.0." : generator-mightymeteorites
+45 error If you need help, you may report this error at:
+45 error     <https://github.com/npm/npm/issues>
+46 verbose exit [ 1, true ]
